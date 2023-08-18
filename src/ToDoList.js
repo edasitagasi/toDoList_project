@@ -6,7 +6,7 @@ export class ToDoList extends Component {
         ToDoList: []
     }
 
-OnChangeEvent(e) {
+onChangeEvent(e) {
     this.setState({userInput: e});
 }
 
@@ -14,7 +14,6 @@ addItem(input) {
     let listArray = this.state.ToDoList;
     listArray.push(input);
     this.setState({ToDoList: listArray, userInput:''})
-    console.log(listArray)
 }
 
 crossedWord(event) {
@@ -34,7 +33,6 @@ onFormSubmit(e) {
 
 render() {
     return(
-        <div>
             <form onSubmit={this.onFormSubmit}>
             <div className='container'>
                 <input type="text"
@@ -52,7 +50,6 @@ render() {
             </ul>
             <button onClick={() => this.deleteItem()} className='btn-delete btn'>DELETE</button>
             </form>
-        </div>
         )
     }
 }
